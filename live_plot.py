@@ -29,8 +29,8 @@ def auto_plot(i, filename):
         ii +=2
 
 fig = plt.figure()
-filename = "data.csv"
+filename = "data3.csv"
 filename2 = "data2.csv"
-filenames = [filename,filename2]
+filenames = [filename]
 ani = FuncAnimation(fig, auto_plot, interval=1000, fargs=(filenames,))
 plt.show()
