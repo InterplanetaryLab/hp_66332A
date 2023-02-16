@@ -55,11 +55,11 @@ class hp66332:
     # charges with cc until volt max is reached or until the timeout occurs
     # params: volt_max (float), dis_curr (float), time_sec - duration (float)
     # set time_sec to -1 if time duration is to be ignored
-    def charge_cc_until_volt(self, volt_max, charge_curr, time_sec):
+    def charge_cc_until_volt(self, charge_volt, volt_max, charge_curr, time_sec, filename = ""):
         print("starting charge cycle, timeout = %f, max_volt = %f, charge_curr = %f"%(time_sec,volt_max,charge_curr))
         self.disable_output()
         self.set_current(charge_curr)
-        self.set_voltage(volt_max)
+        self.set_voltage(charge_volt)
 
         curr_curr = self.get_curr_current()
         curr_volt = self.get_curr_voltage()
